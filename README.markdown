@@ -1,8 +1,8 @@
-### Installation
+## Installation
 
 Clone the repo. Add the `JMWhenTapped` folder to your iOS 4 project. `#import "UIView+WhenTappedBlocks.h"` wherever you'd like to use the syntax.
 
-### Usage
+## Usage
 
 Use it like this:
 	
