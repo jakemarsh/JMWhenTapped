@@ -1,4 +1,10 @@
-Just `#import "UIView+WhenTappedBlocks.h"` where you want to use the syntax and then use it like this:
+### Installation
+
+Clone the repo. Add the `JMWhenTapped` folder to your iOS 4 project. `#import "UIView+WhenTappedBlocks.h"` wherever you'd like to use the syntax.
+
+### Usage
+
+Use it like this:
 	
 	[myView whenTappped:^{
 		NSLog(@"I was tapped!");		
