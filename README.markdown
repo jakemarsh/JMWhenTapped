@@ -6,7 +6,7 @@
 
 Clone the repo. Add the `JMWhenTapped` folder to your iOS 4 project. `#import "JMWhenTapped.h"` wherever you'd like to use the syntax.
 
-## Usage
+## Examples & Usage
 
 Use it like this:
 	
