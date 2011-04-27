@@ -36,4 +36,4 @@ The `whenTouchedUp:` method should be used when you want to trigger some action 
 
 ## Demo
 
-Included in this repo is demo Xcode project that will illustrates a quick example of how to use `JMWhenTapped`.
+Included in this repo is a demo Xcode project that illustrates a quick example of how to use `JMWhenTapped`.
