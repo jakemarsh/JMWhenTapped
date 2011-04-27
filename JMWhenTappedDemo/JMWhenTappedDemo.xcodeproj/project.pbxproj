@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		309F988F136899270030817E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F988E136899270030817E /* UIKit.framework */; };
+		309F9891136899270030817E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F9890136899270030817E /* Foundation.framework */; };
+		309F9893136899270030817E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F9892136899270030817E /* CoreGraphics.framework */; };
+		309F9899136899270030817E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 309F9897136899270030817E /* InfoPlist.strings */; };
+		309F989C136899270030817E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F989B136899270030817E /* main.m */; };
+		309F989F136899270030817E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F989E136899270030817E /* AppDelegate.m */; };
+		309F98A5136899270030817E /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98A4136899270030817E /* DemoViewController.m */; };
+		309F98B313689AE20030817E /* JMWhenTappedBlockKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98B013689AE20030817E /* JMWhenTappedBlockKeeper.m */; };
+		309F98B413689AE20030817E /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		309F988A136899270030817E /* JMWhenTappedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMWhenTappedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		309F988E136899270030817E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		309F9890136899270030817E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		309F9892136899270030817E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		309F9896136899270030817E /* JMWhenTappedDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMWhenTappedDemo-Info.plist"; sourceTree = "<group>"; };
+		309F9898136899270030817E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		309F989A136899270030817E /* JMWhenTappedDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JMWhenTappedDemo-Prefix.pch"; sourceTree = "<group>"; };
+		309F989B136899270030817E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		309F989D136899270030817E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		309F989E136899270030817E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		309F98A3136899270030817E /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		309F98A4136899270030817E /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		309F98AF13689AE20030817E /* JMWhenTappedBlockKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTappedBlockKeeper.h; sourceTree = "<group>"; };
+		309F98B013689AE20030817E /* JMWhenTappedBlockKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMWhenTappedBlockKeeper.m; sourceTree = "<group>"; };
+		309F98B113689AE20030817E /* UIView+WhenTappedBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WhenTappedBlocks.h"; sourceTree = "<group>"; };
+		309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WhenTappedBlocks.m"; sourceTree = "<group>"; };
+		309F98B513689AFA0030817E /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTapped.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		309F9887136899270030817E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309F988F136899270030817E /* UIKit.framework in Frameworks */,
+				309F9891136899270030817E /* Foundation.framework in Frameworks */,
+				309F9893136899270030817E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		309F987F136899270030817E = {
+			isa = PBXGroup;
+			children = (
+				309F9894136899270030817E /* JMWhenTappedDemo */,
+				309F988D136899270030817E /* Frameworks */,
+				309F988B136899270030817E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		309F988B136899270030817E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				309F988A136899270030817E /* JMWhenTappedDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		309F988D136899270030817E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				309F988E136899270030817E /* UIKit.framework */,
+				309F9890136899270030817E /* Foundation.framework */,
+				309F9892136899270030817E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		309F9894136899270030817E /* JMWhenTappedDemo */ = {
+			isa = PBXGroup;
+			children = (
+				309F98AE13689AE20030817E /* JMWhenTapped */,
+				309F989D136899270030817E /* AppDelegate.h */,
+				309F989E136899270030817E /* AppDelegate.m */,
+				309F98A3136899270030817E /* DemoViewController.h */,
+				309F98A4136899270030817E /* DemoViewController.m */,
+				309F9895136899270030817E /* Supporting Files */,
+			);
+			path = JMWhenTappedDemo;
+			sourceTree = "<group>";
+		};
+		309F9895136899270030817E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				309F9896136899270030817E /* JMWhenTappedDemo-Info.plist */,
+				309F9897136899270030817E /* InfoPlist.strings */,
+				309F989A136899270030817E /* JMWhenTappedDemo-Prefix.pch */,
+				309F989B136899270030817E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		309F98AE13689AE20030817E /* JMWhenTapped */ = {
+			isa = PBXGroup;
+			children = (
+				309F98AF13689AE20030817E /* JMWhenTappedBlockKeeper.h */,
+				309F98B013689AE20030817E /* JMWhenTappedBlockKeeper.m */,
+				309F98B113689AE20030817E /* UIView+WhenTappedBlocks.h */,
+				309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */,
+				309F98B513689AFA0030817E /* JMWhenTapped.h */,
+			);
+			name = JMWhenTapped;
+			path = ../../JMWhenTapped;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		309F9889136899270030817E /* JMWhenTappedDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 309F98AB136899270030817E /* Build configuration list for PBXNativeTarget "JMWhenTappedDemo" */;
+			buildPhases = (
+				309F9886136899270030817E /* Sources */,
+				309F9887136899270030817E /* Frameworks */,
+				309F9888136899270030817E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JMWhenTappedDemo;
+			productName = JMWhenTappedDemo;
+			productReference = 309F988A136899270030817E /* JMWhenTappedDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		309F9881136899270030817E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Rubber Duck Software";
+			};
+			buildConfigurationList = 309F9884136899270030817E /* Build configuration list for PBXProject "JMWhenTappedDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 309F987F136899270030817E;
+			productRefGroup = 309F988B136899270030817E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				309F9889136899270030817E /* JMWhenTappedDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		309F9888136899270030817E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309F9899136899270030817E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		309F9886136899270030817E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309F989C136899270030817E /* main.m in Sources */,
+				309F989F136899270030817E /* AppDelegate.m in Sources */,
+				309F98A5136899270030817E /* DemoViewController.m in Sources */,
+				309F98B313689AE20030817E /* JMWhenTappedBlockKeeper.m in Sources */,
+				309F98B413689AE20030817E /* UIView+WhenTappedBlocks.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		309F9897136899270030817E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				309F9898136899270030817E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		309F98A9136899270030817E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		309F98AA136899270030817E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		309F98AC136899270030817E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMWhenTappedDemo/JMWhenTappedDemo-Prefix.pch";
+				INFOPLIST_FILE = "JMWhenTappedDemo/JMWhenTappedDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		309F98AD136899270030817E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMWhenTappedDemo/JMWhenTappedDemo-Prefix.pch";
+				INFOPLIST_FILE = "JMWhenTappedDemo/JMWhenTappedDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		309F9884136899270030817E /* Build configuration list for PBXProject "JMWhenTappedDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309F98A9136899270030817E /* Debug */,
+				309F98AA136899270030817E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		309F98AB136899270030817E /* Build configuration list for PBXNativeTarget "JMWhenTappedDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309F98AC136899270030817E /* Debug */,
+				309F98AD136899270030817E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 309F9881136899270030817E /* Project object */;
+}

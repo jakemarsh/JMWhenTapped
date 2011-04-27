@@ -32,13 +32,25 @@ JMWhenTappedBlockKeeper *_sharedInstance = nil;
 }
 
 - (void) setBlock:(WhenTappedBlock)b forWhenViewIsTapped:(UIView *)v {
-	[_whenTappedBlocks setObject:[b copy] forKey:[NSString stringWithFormat:@"%D", [v hash]]];
+	WhenTappedBlock blockToSet = [b copy];
+
+	[_whenTappedBlocks setObject:blockToSet forKey:[NSString stringWithFormat:@"%D", [v hash]]];
+
+	[blockToSet release];
 }
 - (void) setBlock:(WhenTouchedDownBlock)b forWhenViewIsTouchedDown:(UIView *)v {
-	[_whenTouchedDownBlocks setObject:[b copy] forKey:[NSString stringWithFormat:@"%D", [v hash]]];	
+	WhenTouchedDownBlock blockToSet = [b copy];
+
+	[_whenTouchedDownBlocks setObject:blockToSet forKey:[NSString stringWithFormat:@"%D", [v hash]]];
+
+	[blockToSet release];
 }
 - (void) setBlock:(WhenTouchedUpBlock)b forWhenViewIsTouchedUp:(UIView *)v {
-	[_whenTouchedUpBlocks setObject:[b copy] forKey:[NSString stringWithFormat:@"%D", [v hash]]];
+	WhenTouchedUpBlock blockToSet = [b copy];
+
+	[_whenTouchedUpBlocks setObject:blockToSet forKey:[NSString stringWithFormat:@"%D", [v hash]]];
+
+	[blockToSet release];
 }
 
 - (WhenTappedBlock) whenTappedBlockForView:(UIView *)v {
