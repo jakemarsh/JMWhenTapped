@@ -1,6 +1,6 @@
 ## What is this?
 
-`JMWhenTapped` is a simple little syntactical-sugar added to all `UIView` objects. It allows you to assign touch-up, touch-down, and tapped (touched down then up) actions to a `UIView` object using a convenient blocks-style syntax. (Examples shown below).
+`JMWhenTapped` is a simple little syntactical-sugar addition to all `UIView` objects. It allows you to assign touch-up, touch-down, and tapped (touched down then up) actions to a `UIView` object using a convenient blocks-style syntax. (Examples shown below).
 
 ## Installation
 
