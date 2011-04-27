@@ -1,4 +1,4 @@
-## What is this?
+## What is it?
 
 `JMWhenTapped` is a simple little syntactical-sugar addition to all `UIView` objects, as well as any class that inherits from `UIView`. It allows you to assign touch-up, touch-down, and tapped (touched down then up) actions to a `UIView` object using a convenient blocks-style syntax. (Examples shown below).
 
