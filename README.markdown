@@ -10,7 +10,7 @@ Clone the repo. Add the `JMWhenTapped` folder to your iOS 4 project. `#import "J
 
 Use it like this:
 	
-	[myView whenTappped:^{
+	[myView whenTapped:^{
 		NSLog(@"I was tapped!");
 	}];
 	
@@ -25,3 +25,15 @@ And also like this:
 	[myView whenTouchedUp:^{
 		NSLog(@"I was touched up!");		
 	}];
+
+## The Different Actions
+
+The `whenTapped:` method should be used in cases where you simply want something to happen when the user taps on a view (i.e. you are concerned with performing some action when their finger is down then up, like changing to a "pressed" state.)
+
+The `whenTouchedDown:` method should be used when you want to trigger some action when the user touches down on your view.
+
+The `whenTouchedUp:` method should be used when you want to trigger some action when the user touches up on your view.
+
+## Demo
+
+Included in this repo is demo Xcode project that will illustrates a quick example of how to use `JMWhenTapped`.
