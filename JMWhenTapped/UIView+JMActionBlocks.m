@@ -11,6 +11,9 @@
 
 @implementation UIView (JMActionBlocks)
 
+#pragma mark -
+#pragma mark Add blocks
+
 - (void) whenTapped:(JMActionBlock)block {
 	UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
 	gr.delegate = [JMWhenTappedBlockKeeper sharedInstance];
@@ -24,6 +27,7 @@
 
 	[[JMWhenTappedBlockKeeper sharedInstance] setBlock:block forWhenViewIsTapped:self];
 }
+
 - (void) whenTouchedDown:(JMActionBlock)block {
 	self.userInteractionEnabled = YES;
 
@@ -34,6 +38,9 @@
 
 	[[JMWhenTappedBlockKeeper sharedInstance] setBlock:block forWhenViewIsTouchedUp:self];	
 }
+
+#pragma mark -
+#pragma mark Event handling
 
 - (void) viewWasTapped:(id)sender {
 	JMActionBlock b = [[JMWhenTappedBlockKeeper sharedInstance] tapActionBlockForView:self];
@@ -49,11 +56,7 @@
 		b();
 	}
 }
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	[super touchesMoved:touches withEvent:event];	
 
-	
-}
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	[super touchesEnded:touches withEvent:event];
 
@@ -61,11 +64,6 @@
 		JMActionBlock b = [[JMWhenTappedBlockKeeper sharedInstance] upActionBlockForView:self];
 		b();
 	}
-}
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-	[super touchesCancelled:touches withEvent:event];
-
-	
 }
 
 @end

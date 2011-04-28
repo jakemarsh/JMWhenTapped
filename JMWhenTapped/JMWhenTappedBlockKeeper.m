@@ -13,6 +13,9 @@ JMWhenTappedBlockKeeper *_sharedInstance = nil;
 
 @implementation JMWhenTappedBlockKeeper
 
+#pragma mark -
+#pragma mark Initialisation
+
 + (JMWhenTappedBlockKeeper *) sharedInstance {
 	if(!_sharedInstance) {
 		_sharedInstance = [[JMWhenTappedBlockKeeper alloc] init];
@@ -30,6 +33,9 @@ JMWhenTappedBlockKeeper *_sharedInstance = nil;
 
     return self;
 }
+
+#pragma mark -
+#pragma mark Setting block
 
 - (void) setBlock:(JMActionBlock)b forWhenViewIsTapped:(UIView *)v {
 	JMActionBlock blockToSet = [b copy];
@@ -52,6 +58,9 @@ JMWhenTappedBlockKeeper *_sharedInstance = nil;
 
 	[blockToSet release];
 }
+
+#pragma mark -
+#pragma mark Blocks getter
 
 - (JMActionBlock) tapActionBlockForView:(UIView *)v {
 	JMActionBlock b = [_whenTappedBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
@@ -77,6 +86,7 @@ JMWhenTappedBlockKeeper *_sharedInstance = nil;
 	}
 }
 
+#pragma -
 #pragma mark UIGestureRecognizerDelegate Methods
 
 - (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
