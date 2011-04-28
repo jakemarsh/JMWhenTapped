@@ -1,5 +1,5 @@
 //
-//  UIView+WhenTappedBlocks.h
+//  UIView+JMActionBlocks.h
 //
 //  Created by Jake Marsh on 3/7/11.
 //  Copyright 2011 Rubber Duck Software. All rights reserved.
@@ -10,11 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "JMWhenTappedBlockKeeper.h"
 
-@interface UIView (WhenTappedBlocks)
+@interface UIView (JMActionBlocks)
 
-- (void) whenTapped:(WhenTappedBlock)block;
-- (void) whenTouchedDown:(WhenTouchedDownBlock)block;
-- (void) whenTouchedUp:(WhenTouchedUpBlock)block;
+- (void) whenTapped:(JMActionBlock)block;
+- (void) whenTouchedDown:(JMActionBlock)block;
+- (void) whenTouchedUp:(JMActionBlock)block;
 
 @end
 

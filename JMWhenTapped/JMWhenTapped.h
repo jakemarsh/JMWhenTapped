@@ -7,4 +7,4 @@
 //
 
 #import "JMWhenTappedBlockKeeper.h"
-#import "UIView+WhenTappedBlocks.h"
+#import "UIView+JMActionBlocks.h"

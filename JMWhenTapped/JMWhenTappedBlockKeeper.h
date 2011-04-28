@@ -9,9 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^WhenTappedBlock)();
-typedef void (^WhenTouchedDownBlock)();
-typedef void (^WhenTouchedUpBlock)();
+typedef void (^JMActionBlock)();
 
 @interface JMWhenTappedBlockKeeper : NSObject <UIGestureRecognizerDelegate> {
     NSMutableDictionary *_whenTappedBlocks;
@@ -21,13 +19,13 @@ typedef void (^WhenTouchedUpBlock)();
 
 + (JMWhenTappedBlockKeeper *) sharedInstance;
 
-- (void) setBlock:(WhenTappedBlock)b forWhenViewIsTapped:(UIView *)v;
-- (void) setBlock:(WhenTouchedDownBlock)b forWhenViewIsTouchedDown:(UIView *)v;
-- (void) setBlock:(WhenTouchedUpBlock)b forWhenViewIsTouchedUp:(UIView *)v;
+- (void) setBlock:(JMActionBlock)b forWhenViewIsTapped:(UIView *)v;
+- (void) setBlock:(JMActionBlock)b forWhenViewIsTouchedDown:(UIView *)v;
+- (void) setBlock:(JMActionBlock)b forWhenViewIsTouchedUp:(UIView *)v;
 
-- (WhenTappedBlock) whenTappedBlockForView:(UIView *)v;
-- (WhenTouchedDownBlock) whenTouchedDownBlockForView:(UIView *)v;
-- (WhenTouchedUpBlock) whenTouchedUpBlockForView:(UIView *)v;
+- (JMActionBlock) tapActionBlockForView:(UIView *)v;
+- (JMActionBlock) downActionBlockForView:(UIView *)v;
+- (JMActionBlock) upActionBlockForView:(UIView *)v;
 
 @end
 

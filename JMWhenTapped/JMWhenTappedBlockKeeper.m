@@ -31,45 +31,45 @@ JMWhenTappedBlockKeeper *_sharedInstance = nil;
     return self;
 }
 
-- (void) setBlock:(WhenTappedBlock)b forWhenViewIsTapped:(UIView *)v {
-	WhenTappedBlock blockToSet = [b copy];
+- (void) setBlock:(JMActionBlock)b forWhenViewIsTapped:(UIView *)v {
+	JMActionBlock blockToSet = [b copy];
 
 	[_whenTappedBlocks setObject:blockToSet forKey:[NSString stringWithFormat:@"%D", [v hash]]];
 
 	[blockToSet release];
 }
-- (void) setBlock:(WhenTouchedDownBlock)b forWhenViewIsTouchedDown:(UIView *)v {
-	WhenTouchedDownBlock blockToSet = [b copy];
+- (void) setBlock:(JMActionBlock)b forWhenViewIsTouchedDown:(UIView *)v {
+	JMActionBlock blockToSet = [b copy];
 
 	[_whenTouchedDownBlocks setObject:blockToSet forKey:[NSString stringWithFormat:@"%D", [v hash]]];
 
 	[blockToSet release];
 }
-- (void) setBlock:(WhenTouchedUpBlock)b forWhenViewIsTouchedUp:(UIView *)v {
-	WhenTouchedUpBlock blockToSet = [b copy];
+- (void) setBlock:(JMActionBlock)b forWhenViewIsTouchedUp:(UIView *)v {
+	JMActionBlock blockToSet = [b copy];
 
 	[_whenTouchedUpBlocks setObject:blockToSet forKey:[NSString stringWithFormat:@"%D", [v hash]]];
 
 	[blockToSet release];
 }
 
-- (WhenTappedBlock) whenTappedBlockForView:(UIView *)v {
-	WhenTappedBlock b = [_whenTappedBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
+- (JMActionBlock) tapActionBlockForView:(UIView *)v {
+	JMActionBlock b = [_whenTappedBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
 
 	return [[b copy] autorelease];
 }
-- (WhenTouchedDownBlock) whenTouchedDownBlockForView:(UIView *)v {
+- (JMActionBlock) downActionBlockForView:(UIView *)v {
 	if ([_whenTouchedDownBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]]) {
-		WhenTouchedDownBlock b = [_whenTouchedDownBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
+		JMActionBlock b = [_whenTouchedDownBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
 		
 		return [[b copy] autorelease];		
 	} else {
 		return nil;
 	}
 }
-- (WhenTouchedUpBlock) whenTouchedUpBlockForView:(UIView *)v {
+- (JMActionBlock) upActionBlockForView:(UIView *)v {
 	if([_whenTouchedUpBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]]) {
-		WhenTouchedUpBlock b = [_whenTouchedUpBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
+		JMActionBlock b = [_whenTouchedUpBlocks objectForKey:[NSString stringWithFormat:@"%D", [v hash]]];
 		
 		return [[b copy] autorelease];		
 	} else {
