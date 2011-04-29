@@ -1,5 +1,5 @@
 //
-//  UIView+JMActionBlocks.m
+//  UIView+WhenTappedBlocks.m
 //
 //  Created by Jake Marsh on 3/7/11.
 //  Copyright 2011 Rubber Duck Software. All rights reserved.
@@ -7,63 +7,58 @@
 
 #if NS_BLOCKS_AVAILABLE
 
-#import "UIView+JMActionBlocks.h"
+#import "UIView+WhenTappedBlocks.h"
+#import <objc/runtime.h>
 
 @implementation UIView (JMActionBlocks)
 
-#pragma mark -
-#pragma mark Add blocks
+static char kWhenTappedBlockKey;
+static char kWhenTouchedDownBlockKey;
+static char kWhenTouchedUpBlockKey;
 
-- (void) whenTapped:(JMActionBlock)block {
-	UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
-	gr.delegate = [JMWhenTappedBlockKeeper sharedInstance];
-	gr.numberOfTapsRequired = 1;
-
-	self.userInteractionEnabled = YES;
-
-	[self addGestureRecognizer:gr];
-
-	[gr release];
-
-	[[JMWhenTappedBlockKeeper sharedInstance] setBlock:block forWhenViewIsTapped:self];
+- (void)runBlockForKey:(void *)blockKey {
+    WhenTappedBlock block = objc_getAssociatedObject(self, blockKey);
+    if (block) block();
 }
 
-- (void) whenTouchedDown:(JMActionBlock)block {
-	self.userInteractionEnabled = YES;
-
-	[[JMWhenTappedBlockKeeper sharedInstance] setBlock:block forWhenViewIsTouchedDown:self];
-}
-- (void) whenTouchedUp:(JMActionBlock)block {
-	self.userInteractionEnabled = YES;
-
-	[[JMWhenTappedBlockKeeper sharedInstance] setBlock:block forWhenViewIsTouchedUp:self];	
+- (void)setBlock:(WhenTappedBlock)block forKey:(void *)blockKey {
+    self.userInteractionEnabled = YES;
+    objc_setAssociatedObject(self, blockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-#pragma mark -
-#pragma mark Event handling
-
-- (void) viewWasTapped:(id)sender {
-	JMActionBlock b = [[JMWhenTappedBlockKeeper sharedInstance] tapActionBlockForView:self];
-
-	b();
+- (void)whenTapped:(WhenTappedBlock)block {
+    self.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer* tapGesture;
+    tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)] autorelease];
+    tapGesture.delegate = self;
+    tapGesture.numberOfTapsRequired = 1;
+    
+    [self addGestureRecognizer:tapGesture];
+    
+    [self setBlock:block forKey:&kWhenTappedBlockKey];
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	[super touchesBegan:touches withEvent:event];
-
-	if([[JMWhenTappedBlockKeeper sharedInstance] downActionBlockForView:self]) {
-		JMActionBlock b = [[JMWhenTappedBlockKeeper sharedInstance] downActionBlockForView:self];
-		b();
-	}
+- (void)whenTouchedDown:(WhenTappedBlock)block {
+    [self setBlock:block forKey:&kWhenTouchedDownBlockKey];
 }
 
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	[super touchesEnded:touches withEvent:event];
+- (void)whenTouchedUp:(WhenTappedBlock)block {
+    [self setBlock:block forKey:&kWhenTouchedUpBlockKey];
+}
 
-	if([[JMWhenTappedBlockKeeper sharedInstance] upActionBlockForView:self]) {
-		JMActionBlock b = [[JMWhenTappedBlockKeeper sharedInstance] upActionBlockForView:self];
-		b();
-	}
+- (void)viewWasTapped:(id)sender {
+    [self runBlockForKey:&kWhenTappedBlockKey];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self runBlockForKey:&kWhenTouchedDownBlockKey];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    [self runBlockForKey:&kWhenTouchedUpBlockKey];
 }
 
 @end
