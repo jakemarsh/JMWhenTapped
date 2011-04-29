@@ -10,30 +10,30 @@
 #import "UIView+WhenTappedBlocks.h"
 #import <objc/runtime.h>
 
-@interface UIView (JMActionBlocks_Private)
+@interface UIView (JMWhenTappedBlocks_Private)
 
 - (void)runBlockForKey:(void *)blockKey;
-- (void)setBlock:(WhenTappedBlock)block forKey:(void *)blockKey;
+- (void)setBlock:(JMWhenTappedBlock)block forKey:(void *)blockKey;
 
 @end
 
-@implementation UIView (JMActionBlocks)
+@implementation UIView (JMWhenTappedBlocks)
 
 static char kWhenTappedBlockKey;
 static char kWhenTouchedDownBlockKey;
 static char kWhenTouchedUpBlockKey;
 
 - (void)runBlockForKey:(void *)blockKey {
-    WhenTappedBlock block = objc_getAssociatedObject(self, blockKey);
+    JMWhenTappedBlock block = objc_getAssociatedObject(self, blockKey);
     if (block) block();
 }
 
-- (void)setBlock:(WhenTappedBlock)block forKey:(void *)blockKey {
+- (void)setBlock:(JMWhenTappedBlock)block forKey:(void *)blockKey {
     self.userInteractionEnabled = YES;
     objc_setAssociatedObject(self, blockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void)whenTapped:(WhenTappedBlock)block {
+- (void)whenTapped:(JMWhenTappedBlock)block {
     self.userInteractionEnabled = YES;
 
     UITapGestureRecognizer* tapGesture;
@@ -46,11 +46,11 @@ static char kWhenTouchedUpBlockKey;
     [self setBlock:block forKey:&kWhenTappedBlockKey];
 }
 
-- (void)whenTouchedDown:(WhenTappedBlock)block {
+- (void)whenTouchedDown:(JMWhenTappedBlock)block {
     [self setBlock:block forKey:&kWhenTouchedDownBlockKey];
 }
 
-- (void)whenTouchedUp:(WhenTappedBlock)block {
+- (void)whenTouchedUp:(JMWhenTappedBlock)block {
     [self setBlock:block forKey:&kWhenTouchedUpBlockKey];
 }
 
