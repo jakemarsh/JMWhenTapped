@@ -7,14 +7,15 @@
 
 #if NS_BLOCKS_AVAILABLE
 
-#import <Foundation/Foundation.h>
-#import "JMWhenTappedBlockKeeper.h"
+#import <UIKit/UIKit.h>
 
-@interface UIView (WhenTappedBlocks)
+typedef void (^WhenTappedBlock)();
 
-- (void) whenTapped:(WhenTappedBlock)block;
-- (void) whenTouchedDown:(WhenTouchedDownBlock)block;
-- (void) whenTouchedUp:(WhenTouchedUpBlock)block;
+@interface UIView (WhenTappedBlocks) <UIGestureRecognizerDelegate>
+
+- (void)whenTapped:(WhenTappedBlock)block;
+- (void)whenTouchedDown:(WhenTappedBlock)block;
+- (void)whenTouchedUp:(WhenTappedBlock)block;
 
 @end
 

@@ -14,7 +14,6 @@
 		309F989C136899270030817E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F989B136899270030817E /* main.m */; };
 		309F989F136899270030817E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F989E136899270030817E /* AppDelegate.m */; };
 		309F98A5136899270030817E /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98A4136899270030817E /* DemoViewController.m */; };
-		309F98B313689AE20030817E /* JMWhenTappedBlockKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98B013689AE20030817E /* JMWhenTappedBlockKeeper.m */; };
 		309F98B413689AE20030817E /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +30,6 @@
 		309F989E136899270030817E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		309F98A3136899270030817E /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		309F98A4136899270030817E /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
-		309F98AF13689AE20030817E /* JMWhenTappedBlockKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTappedBlockKeeper.h; sourceTree = "<group>"; };
-		309F98B013689AE20030817E /* JMWhenTappedBlockKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMWhenTappedBlockKeeper.m; sourceTree = "<group>"; };
 		309F98B113689AE20030817E /* UIView+WhenTappedBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WhenTappedBlocks.h"; sourceTree = "<group>"; };
 		309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WhenTappedBlocks.m"; sourceTree = "<group>"; };
 		309F98B513689AFA0030817E /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTapped.h; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 		309F98AE13689AE20030817E /* JMWhenTapped */ = {
 			isa = PBXGroup;
 			children = (
-				309F98AF13689AE20030817E /* JMWhenTappedBlockKeeper.h */,
-				309F98B013689AE20030817E /* JMWhenTappedBlockKeeper.m */,
 				309F98B113689AE20030817E /* UIView+WhenTappedBlocks.h */,
 				309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */,
 				309F98B513689AFA0030817E /* JMWhenTapped.h */,
@@ -180,7 +175,6 @@
 				309F989C136899270030817E /* main.m in Sources */,
 				309F989F136899270030817E /* AppDelegate.m in Sources */,
 				309F98A5136899270030817E /* DemoViewController.m in Sources */,
-				309F98B313689AE20030817E /* JMWhenTappedBlockKeeper.m in Sources */,
 				309F98B413689AE20030817E /* UIView+WhenTappedBlocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +263,6 @@
 				309F98AA136899270030817E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		309F98AB136899270030817E /* Build configuration list for PBXNativeTarget "JMWhenTappedDemo" */ = {
 			isa = XCConfigurationList;
@@ -278,6 +271,7 @@
 				309F98AD136899270030817E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

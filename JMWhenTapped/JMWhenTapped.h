@@ -6,5 +6,4 @@
 //  Copyright 2011 Rubber Duck Software. All rights reserved.
 //
 
-#import "JMWhenTappedBlockKeeper.h"
 #import "UIView+WhenTappedBlocks.h"
