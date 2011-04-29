@@ -10,6 +10,13 @@
 #import "UIView+WhenTappedBlocks.h"
 #import <objc/runtime.h>
 
+@interface UIView (JMActionBlocks_Private)
+
+- (void)runBlockForKey:(void *)blockKey;
+- (void)setBlock:(WhenTappedBlock)block forKey:(void *)blockKey;
+
+@end
+
 @implementation UIView (JMActionBlocks)
 
 static char kWhenTappedBlockKey;
