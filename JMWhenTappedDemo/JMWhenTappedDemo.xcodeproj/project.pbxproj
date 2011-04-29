@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301AA693136ADFB000B2BB5C /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA692136ADFB000B2BB5C /* UIView+WhenTappedBlocks.m */; };
 		309F988F136899270030817E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F988E136899270030817E /* UIKit.framework */; };
 		309F9891136899270030817E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F9890136899270030817E /* Foundation.framework */; };
 		309F9893136899270030817E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F9892136899270030817E /* CoreGraphics.framework */; };
@@ -14,10 +15,10 @@
 		309F989C136899270030817E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F989B136899270030817E /* main.m */; };
 		309F989F136899270030817E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F989E136899270030817E /* AppDelegate.m */; };
 		309F98A5136899270030817E /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98A4136899270030817E /* DemoViewController.m */; };
-		309F98B413689AE20030817E /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301AA692136ADFB000B2BB5C /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WhenTappedBlocks.m"; sourceTree = "<group>"; };
 		309F988A136899270030817E /* JMWhenTappedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMWhenTappedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309F988E136899270030817E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		309F9890136899270030817E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -31,7 +32,6 @@
 		309F98A3136899270030817E /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		309F98A4136899270030817E /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		309F98B113689AE20030817E /* UIView+WhenTappedBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WhenTappedBlocks.h"; sourceTree = "<group>"; };
-		309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WhenTappedBlocks.m"; sourceTree = "<group>"; };
 		309F98B513689AFA0030817E /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTapped.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				309F98B113689AE20030817E /* UIView+WhenTappedBlocks.h */,
-				309F98B213689AE20030817E /* UIView+WhenTappedBlocks.m */,
+				301AA692136ADFB000B2BB5C /* UIView+WhenTappedBlocks.m */,
 				309F98B513689AFA0030817E /* JMWhenTapped.h */,
 			);
 			name = JMWhenTapped;
@@ -175,7 +175,7 @@
 				309F989C136899270030817E /* main.m in Sources */,
 				309F989F136899270030817E /* AppDelegate.m in Sources */,
 				309F98A5136899270030817E /* DemoViewController.m in Sources */,
-				309F98B413689AE20030817E /* UIView+WhenTappedBlocks.m in Sources */,
+				301AA693136ADFB000B2BB5C /* UIView+WhenTappedBlocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +263,7 @@
 				309F98AA136899270030817E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		309F98AB136899270030817E /* Build configuration list for PBXNativeTarget "JMWhenTappedDemo" */ = {
 			isa = XCConfigurationList;

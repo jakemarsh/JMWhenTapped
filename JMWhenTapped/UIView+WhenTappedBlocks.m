@@ -28,7 +28,7 @@ static char kWhenTouchedUpBlockKey;
 
 - (void)whenTapped:(WhenTappedBlock)block {
     self.userInteractionEnabled = YES;
-    
+
     UITapGestureRecognizer* tapGesture;
     tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)] autorelease];
     tapGesture.delegate = self;
