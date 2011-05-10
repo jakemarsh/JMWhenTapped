@@ -15,6 +15,8 @@
 - (void)runBlockForKey:(void *)blockKey;
 - (void)setBlock:(JMWhenTappedBlock)block forKey:(void *)blockKey;
 
+- (void)addTapGestureRecognizerWithTaps:(NSUInteger) taps touches:(NSUInteger) touches selector:(SEL) selector;
+
 @end
 
 @implementation UIView (JMWhenTappedBlocks)
@@ -42,32 +44,19 @@ static char kWhenTouchedUpBlockKey;
 #pragma mark When Tapped
 
 - (void)whenTapped:(JMWhenTappedBlock)block {
-    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped)];
-    tapGesture.delegate = self;
-    tapGesture.numberOfTapsRequired = 1;
-    [self addGestureRecognizer:tapGesture];
-    [tapGesture release];
+    [self addTapGestureRecognizerWithTaps:1 touches:1 selector:@selector(viewWasTapped)];
     
     [self setBlock:block forKey:&kWhenTappedBlockKey];
 }
 
 - (void)whenDoubleTapped:(JMWhenTappedBlock)block {
-    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasDoubleTapped)];
-    tapGesture.delegate = self;
-    tapGesture.numberOfTapsRequired = 2;
-    [self addGestureRecognizer:tapGesture];
-    [tapGesture release];
+    [self addTapGestureRecognizerWithTaps:2 touches:1 selector:@selector(viewWasDoubleTapped)];
     
     [self setBlock:block forKey:&kWhenDoubleTappedBlockKey];
 }
 
 - (void)whenTwoFingerTapped:(JMWhenTappedBlock)block {
-    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTwoFingerTapped)];
-    tapGesture.delegate = self;
-    tapGesture.numberOfTapsRequired = 1;
-    tapGesture.numberOfTouchesRequired = 2;
-    [self addGestureRecognizer:tapGesture];
-    [tapGesture release];
+    [self addTapGestureRecognizerWithTaps:1 touches:2 selector:@selector(viewWasTwoFingerTapped)];
     
     [self setBlock:block forKey:&kWhenTwoFingerTappedBlockKey];
 }
@@ -103,6 +92,18 @@ static char kWhenTouchedUpBlockKey;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     [self runBlockForKey:&kWhenTouchedUpBlockKey];
+}
+
+#pragma mark -
+#pragma mark Helpers
+
+- (void)addTapGestureRecognizerWithTaps:(NSUInteger)taps touches:(NSUInteger)touches selector:(SEL)selector {
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:selector];
+    tapGesture.delegate = self;
+    tapGesture.numberOfTapsRequired = taps;
+    tapGesture.numberOfTouchesRequired = touches;
+    [self addGestureRecognizer:tapGesture];
+    [tapGesture release];
 }
 
 @end
