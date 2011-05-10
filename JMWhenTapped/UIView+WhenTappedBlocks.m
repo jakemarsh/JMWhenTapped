@@ -36,7 +36,7 @@ static char kWhenTouchedUpBlockKey;
 }
 
 - (void)whenTapped:(JMWhenTappedBlock)block {
-    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped)];
     tapGesture.delegate = self;
     tapGesture.numberOfTapsRequired = 1;
     [self addGestureRecognizer:tapGesture];
@@ -46,7 +46,7 @@ static char kWhenTouchedUpBlockKey;
 }
 
 - (void)whenDoubleTapped:(JMWhenTappedBlock)block {
-    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasDoubleTapped:)];
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasDoubleTapped)];
     tapGesture.delegate = self;
     tapGesture.numberOfTapsRequired = 2;
     [self addGestureRecognizer:tapGesture];
@@ -56,7 +56,7 @@ static char kWhenTouchedUpBlockKey;
 }
 
 - (void)whenTwoFingerTapped:(JMWhenTappedBlock)block {
-    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTwoFingerTapped:)];
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTwoFingerTapped)];
     tapGesture.delegate = self;
     tapGesture.numberOfTapsRequired = 1;
     tapGesture.numberOfTouchesRequired = 2;
@@ -74,15 +74,15 @@ static char kWhenTouchedUpBlockKey;
     [self setBlock:block forKey:&kWhenTouchedUpBlockKey];
 }
 
-- (void)viewWasTapped:(id)sender {
+- (void)viewWasTapped {
     [self runBlockForKey:&kWhenTappedBlockKey];
 }
 
-- (void)viewWasDoubleTapped:(id)sender {
+- (void)viewWasDoubleTapped {
     [self runBlockForKey:&kWhenDoubleTappedBlockKey];
 }
 
-- (void)viewWasTwoFingerTapped:(id)sender {
+- (void)viewWasTwoFingerTapped {
     [self runBlockForKey:&kWhenTwoFingerTappedBlockKey];
 }
 
