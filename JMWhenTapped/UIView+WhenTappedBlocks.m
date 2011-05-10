@@ -20,6 +20,8 @@
 @implementation UIView (JMWhenTappedBlocks)
 
 static char kWhenTappedBlockKey;
+static char kWhenDoubleTappedBlockKey;
+static char kWhenTwoFingerTappedBlockKey;
 static char kWhenTouchedDownBlockKey;
 static char kWhenTouchedUpBlockKey;
 
@@ -43,6 +45,27 @@ static char kWhenTouchedUpBlockKey;
     [self setBlock:block forKey:&kWhenTappedBlockKey];
 }
 
+- (void)whenDoubleTapped:(JMWhenTappedBlock)block {
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasDoubleTapped:)];
+    tapGesture.delegate = self;
+    tapGesture.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:tapGesture];
+    [tapGesture release];
+    
+    [self setBlock:block forKey:&kWhenDoubleTappedBlockKey];
+}
+
+- (void)whenTwoFingerTapped:(JMWhenTappedBlock)block {
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTwoFingerTapped:)];
+    tapGesture.delegate = self;
+    tapGesture.numberOfTapsRequired = 1;
+    tapGesture.numberOfTouchesRequired = 2;
+    [self addGestureRecognizer:tapGesture];
+    [tapGesture release];
+    
+    [self setBlock:block forKey:&kWhenTwoFingerTappedBlockKey];
+}
+
 - (void)whenTouchedDown:(JMWhenTappedBlock)block {
     [self setBlock:block forKey:&kWhenTouchedDownBlockKey];
 }
@@ -53,6 +76,14 @@ static char kWhenTouchedUpBlockKey;
 
 - (void)viewWasTapped:(id)sender {
     [self runBlockForKey:&kWhenTappedBlockKey];
+}
+
+- (void)viewWasDoubleTapped:(id)sender {
+    [self runBlockForKey:&kWhenDoubleTappedBlockKey];
+}
+
+- (void)viewWasTwoFingerTapped:(id)sender {
+    [self runBlockForKey:&kWhenTwoFingerTappedBlockKey];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
