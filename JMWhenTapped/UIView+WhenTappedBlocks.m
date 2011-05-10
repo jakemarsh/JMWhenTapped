@@ -36,12 +36,11 @@ static char kWhenTouchedUpBlockKey;
 - (void)whenTapped:(JMWhenTappedBlock)block {
     self.userInteractionEnabled = YES;
 
-    UITapGestureRecognizer* tapGesture;
-    tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)] autorelease];
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
     tapGesture.delegate = self;
     tapGesture.numberOfTapsRequired = 1;
-    
     [self addGestureRecognizer:tapGesture];
+    [tapGesture release];
     
     [self setBlock:block forKey:&kWhenTappedBlockKey];
 }
