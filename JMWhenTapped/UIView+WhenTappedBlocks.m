@@ -25,6 +25,9 @@ static char kWhenTwoFingerTappedBlockKey;
 static char kWhenTouchedDownBlockKey;
 static char kWhenTouchedUpBlockKey;
 
+#pragma mark -
+#pragma mark Set blocks
+
 - (void)runBlockForKey:(void *)blockKey {
     JMWhenTappedBlock block = objc_getAssociatedObject(self, blockKey);
     if (block) block();
@@ -34,6 +37,9 @@ static char kWhenTouchedUpBlockKey;
     self.userInteractionEnabled = YES;
     objc_setAssociatedObject(self, blockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
+
+#pragma mark -
+#pragma mark When Tapped
 
 - (void)whenTapped:(JMWhenTappedBlock)block {
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped)];
@@ -73,6 +79,9 @@ static char kWhenTouchedUpBlockKey;
 - (void)whenTouchedUp:(JMWhenTappedBlock)block {
     [self setBlock:block forKey:&kWhenTouchedUpBlockKey];
 }
+
+#pragma mark -
+#pragma mark Callbacks
 
 - (void)viewWasTapped {
     [self runBlockForKey:&kWhenTappedBlockKey];
