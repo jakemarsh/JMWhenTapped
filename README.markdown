@@ -32,9 +32,9 @@ This works the same way with double tap and two finger taps.
 
 The `whenTapped:` method should be used in cases where you simply want something to happen when the user taps on a view (i.e. you are concerned with performing some action when their finger is down then up, like changing to a "pressed" state.)
 
-The `whenDoubleTapped:` method is used when you want to check for double taps on your view.
+The `whenDoubleTapped:` method should be used when you want to check for double taps on your view.
 
-The `whenTwoFingerTapped:` method is used when you want to check for single taps made with two fingers (like in Maps.app).
+The `whenTwoFingerTapped:` method should be used when you want to check for single taps made with two fingers (like in Maps.app).
 
 The `whenTouchedDown:` method should be used when you want to trigger some action when the user touches down on your view.
 
