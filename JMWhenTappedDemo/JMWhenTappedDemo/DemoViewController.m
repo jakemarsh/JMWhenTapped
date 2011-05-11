@@ -24,6 +24,18 @@
 		[a show];
 		[a release];
 	}];
+    
+    [_view1 whenDoubleTapped:^{
+        UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Double tapped!" message:@"You double tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[a show];
+		[a release];
+    }];
+    
+    [_view1 whenTwoFingerTapped:^{
+        UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Two finger tapped!" message:@"You two finger tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[a show];
+		[a release];
+    }];
 
 	[_view1 release];
 
