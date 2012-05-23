@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 int main(int argc, char *argv[]) {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
 
-	int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
+		int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
 
-	[pool release];
 
-	return retVal;
+		return retVal;
+	}
 }

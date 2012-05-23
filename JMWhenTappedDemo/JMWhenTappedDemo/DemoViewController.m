@@ -22,22 +22,18 @@
 	[_view1 whenTapped:^{
 		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Tapped!" message:@"You tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[a show];
-		[a release];
 	}];
     
     [_view1 whenDoubleTapped:^{
         UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Double tapped!" message:@"You double tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[a show];
-		[a release];
     }];
     
     [_view1 whenTwoFingerTapped:^{
         UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Two finger tapped!" message:@"You two finger tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[a show];
-		[a release];
     }];
 
-	[_view1 release];
 
 	_view2 = [[UIView alloc] initWithFrame:CGRectMake(140.0, 20.0, 100.0, 100.0)];
 	_view2.backgroundColor = [UIColor blueColor];
@@ -53,10 +49,8 @@
 
 		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Tapped!" message:@"You tapped view2! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[a show];
-		[a release];
 	}];
 
-	[_view2 release];
 }
 
 #pragma mark Cleanup Methods
@@ -66,9 +60,6 @@
 }
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-- (void) dealloc {
-    [super dealloc];
 }
 
 @end
