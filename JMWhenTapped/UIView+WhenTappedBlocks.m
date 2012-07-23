@@ -108,7 +108,7 @@ static char kWhenTouchedUpBlockKey;
     tapGesture.numberOfTouchesRequired = touches;
     [self addGestureRecognizer:tapGesture];
     
-    return [tapGesture autorelease];
+    return tapGesture;
 }
 
 - (void) addRequirementToSingleTapsRecognizer:(UIGestureRecognizer*) recognizer {
