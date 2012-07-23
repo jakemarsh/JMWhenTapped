@@ -9,45 +9,72 @@
 #import "DemoViewController.h"
 #import "JMWhenTapped.h"
 
+@interface DemoViewController ()
+
+@property (strong, nonatomic) UIView *view1;
+@property (strong, nonatomic) UIView *view2;
+
+@end
+
 @implementation DemoViewController
+
+@synthesize view1 = _view1;
+@synthesize view2 = _view2;
 
 - (void) loadView {
 	[super loadView];
 
-	_view1 = [[UIView alloc] initWithFrame:CGRectMake(20.0, 20.0, 100.0, 100.0)];
-	_view1.backgroundColor = [UIColor redColor];
+	self.view1 = [[UIView alloc] initWithFrame:CGRectMake(20.0, 20.0, 100.0, 100.0)];
+	self.view1.backgroundColor = [UIColor redColor];
 
-	[self.view addSubview:_view1];
+	[self.view addSubview:self.view1];
 
-	[_view1 whenTapped:^{
-		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Tapped!" message:@"You tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[self.view1 whenTapped:^{
+		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Tapped!" 
+                                                    message:@"You tapped view1! Congratulations!" 
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil];
 		[a show];
 	}];
     
-    [_view1 whenDoubleTapped:^{
-        UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Double tapped!" message:@"You double tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [self.view1 whenDoubleTapped:^{
+        UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Double tapped!" 
+                                                    message:@"You double tapped view1! Congratulations!" 
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil];
 		[a show];
     }];
     
-    [_view1 whenTwoFingerTapped:^{
-        UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Two finger tapped!" message:@"You two finger tapped view1! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [self.view1 whenTwoFingerTapped:^{
+        UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Two finger tapped!" 
+                                                    message:@"You two finger tapped view1! Congratulations!" 
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil];
 		[a show];
     }];
 
 
-	_view2 = [[UIView alloc] initWithFrame:CGRectMake(140.0, 20.0, 100.0, 100.0)];
-	_view2.backgroundColor = [UIColor blueColor];
+	self.view2 = [[UIView alloc] initWithFrame:CGRectMake(140.0, 20.0, 100.0, 100.0)];
+	self.view2.backgroundColor = [UIColor blueColor];
 
-	[self.view addSubview:_view2];
+	[self.view addSubview:self.view2];
 
-	[_view2 whenTouchedDown:^{
-		_view2.backgroundColor = [UIColor yellowColor];
+    __block DemoViewController *safeSelf = self;
+	[self.view2 whenTouchedDown:^{
+		safeSelf.view2.backgroundColor = [UIColor yellowColor];
 	}];
 
-	[_view2 whenTouchedUp:^{
-		_view2.backgroundColor = [UIColor blueColor];
+	[self.view2 whenTouchedUp:^{
+		safeSelf.view2.backgroundColor = [UIColor blueColor];
 
-		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Tapped!" message:@"You tapped view2! Congratulations!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Tapped!" 
+                                                    message:@"You tapped view2! Congratulations!" 
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil];
 		[a show];
 	}];
 

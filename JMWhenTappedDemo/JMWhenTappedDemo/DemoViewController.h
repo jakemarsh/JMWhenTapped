@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoViewController : UIViewController {
-	UIView *_view1;
-	UIView *_view2;
-}
+@interface DemoViewController : UIViewController
 
 @end
