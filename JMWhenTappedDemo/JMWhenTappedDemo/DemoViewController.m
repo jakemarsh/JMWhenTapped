@@ -77,6 +77,10 @@
                                           otherButtonTitles:nil];
 		[a show];
 	}];
+	
+	[self.view2 whenTapCanceled:^{
+		NSLog(@" tap canceled ");
+	}];
 
 }
 
