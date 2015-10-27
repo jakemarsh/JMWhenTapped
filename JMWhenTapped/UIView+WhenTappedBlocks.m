@@ -28,6 +28,7 @@ static char kWhenDoubleTappedBlockKey;
 static char kWhenTwoFingerTappedBlockKey;
 static char kWhenTouchedDownBlockKey;
 static char kWhenTouchedUpBlockKey;
+static char kWhenTapCanceledKey;
 
 #pragma mark -
 #pragma mark Set blocks
@@ -73,6 +74,10 @@ static char kWhenTouchedUpBlockKey;
     [self setBlock:block forKey:&kWhenTouchedUpBlockKey];
 }
 
+- (void)whenTapCanceled:(JMWhenTappedBlock)block {
+	[self setBlock:block forKey:&kWhenTapCanceledKey];
+}
+
 #pragma mark -
 #pragma mark Callbacks
 
@@ -91,6 +96,11 @@ static char kWhenTouchedUpBlockKey;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self runBlockForKey:&kWhenTouchedDownBlockKey];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+	[super touchesCancelled:touches withEvent:event];
+	[self runBlockForKey:&kWhenTapCanceledKey];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -18,6 +18,7 @@ typedef void (^JMWhenTappedBlock)();
 - (void)whenTwoFingerTapped:(JMWhenTappedBlock)block;
 - (void)whenTouchedDown:(JMWhenTappedBlock)block;
 - (void)whenTouchedUp:(JMWhenTappedBlock)block;
+- (void)whenTapCanceled:(JMWhenTappedBlock)block;
 
 @end
 
